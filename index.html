@@ -274,11 +274,27 @@ img{background:var(--sky2);}
 @page{size:297mm 210mm;margin:0;}
 @media print{
   *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;box-shadow:none !important;}
-  html,body{background:#fff;margin:0;padding:0;width:297mm;}
-  .page{margin:0 !important;width:297mm;height:210mm;min-height:210mm;max-height:210mm;page-break-after:always;page-break-inside:avoid;break-inside:avoid;overflow:hidden;}
-  .page:last-child{page-break-after:auto;}
-  .cover{min-height:0;height:210mm;}
+  html,body{background:#fff;margin:0 !important;padding:0 !important;width:297mm;}
+  /* 강제 A4 가로 페이지 — 절대 넘치지 않게 */
+  .page{
+    margin:0 !important;padding:0 !important;
+    width:297mm !important;height:210mm !important;
+    min-height:210mm !important;max-height:210mm !important;
+    page-break-after:always !important;
+    page-break-inside:avoid !important;
+    break-inside:avoid !important;
+    break-after:page !important;
+    overflow:hidden !important;
+    position:relative;
+  }
+  .page:last-child{page-break-after:auto !important;break-after:auto !important;}
+  .cover{min-height:0 !important;height:210mm !important;}
   .intro-cell{background:transparent !important;border:none !important;}
+  /* 모바일 전용 요소는 인쇄에서 확실히 숨김 */
+  .mobile-only{display:none !important;}
+  /* 데스크탑 전용은 인쇄에서 확실히 표시 */
+  .desktop-only{display:revert !important;}
+  .cb-cap .desktop-only{display:inline !important;}
 }
 
 /* ============ MOBILE — CONTENT-FLOW MODE ============
@@ -397,7 +413,7 @@ img{background:var(--sky2);}
   .cb-pair{width:100%;}
   .cb-pair-photos{justify-content:center;flex-wrap:wrap;gap:6px;}
   .cb-photo{width:48%;}
-  .cb-img{height:auto;width:100%;max-height:220px;object-fit:cover;}
+  .cb-img{height:200px;width:100%;object-fit:cover;}
   .cb-cap{white-space:normal;font-size:10.5px;}
 
   /* ===== FEATURE BOXES ===== */
