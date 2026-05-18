@@ -285,6 +285,7 @@ img{background:var(--sky2);}
    .page는 투명한 블록 컨테이너가 되고, 섹션들이 하나의 문서로 흐름.
    푸터·페이지 번호는 모바일에서 숨김 (화면에 불필요). */
 @media (max-width:900px){
+  .desktop-only{display:none !important;}
   body{background:#f4f6fb;color:var(--dark);}
 
   /* Dissolve page containers.
@@ -608,8 +609,9 @@ img{background:var(--sky2);}
         <div class="cb-pair">
           <div class="cb-pair-photos">
             <img loading="lazy" decoding="async"class="cb-img" src="images/case_jobworld.jpg" alt="한국잡월드 미래체험관">
+            <img loading="lazy" decoding="async"class="cb-img portrait desktop-only" src="images/case_ceo.png" alt="이민재 대표이사">
           </div>
-          <div class="cb-cap">▲ 한국잡월드 드림텔러 전경</div>
+          <div class="cb-cap">▲ 한국잡월드 드림텔러 전경<span class="desktop-only"> · 총괄 기획 이민재 대표</span></div>
         </div>
         <div class="cb-photo">
           <img loading="lazy" decoding="async"class="cb-img" src="images/case_mou.jpg" alt="한국잡월드-사자가온다 MOU">
