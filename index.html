@@ -300,8 +300,9 @@ img{background:var(--sky2);}
 /* ============ MOBILE — CONTENT-FLOW MODE ============
    Strategy: A4 페이지 경계를 모바일에서 시각적으로 해체.
    .page는 투명한 블록 컨테이너가 되고, 섹션들이 하나의 문서로 흐름.
-   푸터·페이지 번호는 모바일에서 숨김 (화면에 불필요). */
-@media (max-width:900px){
+   푸터·페이지 번호는 모바일에서 숨김 (화면에 불필요).
+   `screen and` 한정 → 인쇄에서는 절대 적용 안 됨 (필수). */
+@media screen and (max-width:900px){
   .desktop-only{display:none !important;}
   .mobile-only{display:block !important;}
   body{background:#f4f6fb;color:var(--dark);}
@@ -468,7 +469,7 @@ img{background:var(--sky2);}
 }
 
 /* ===== SMALL PHONES ===== */
-@media (max-width:480px){
+@media screen and (max-width:480px){
   .inner{padding:26px 14px 8px;}
   .ph-title{font-size:19px;}
   .pg3,.pg4{grid-template-columns:1fr;}
