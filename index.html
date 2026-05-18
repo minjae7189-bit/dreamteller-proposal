@@ -270,6 +270,7 @@ body{font-family:"Noto Sans KR",sans-serif;background:#c0cae0;color:var(--dark);
 .cta-contact strong{color:var(--brand);font-weight:800;}
 
 img{background:var(--sky2);}
+.mobile-only{display:none;}
 @page{size:297mm 210mm;margin:0;}
 @media print{
   *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;box-shadow:none !important;}
@@ -286,6 +287,7 @@ img{background:var(--sky2);}
    푸터·페이지 번호는 모바일에서 숨김 (화면에 불필요). */
 @media (max-width:900px){
   .desktop-only{display:none !important;}
+  .mobile-only{display:block !important;}
   body{background:#f4f6fb;color:var(--dark);}
 
   /* Dissolve page containers.
@@ -587,6 +589,7 @@ img{background:var(--sky2);}
       <div class="proc-step"><div class="proc-img"><span class="proc-num">9</span><img loading="lazy" decoding="async"src="images/step9.png" alt="얼굴촬영"></div><div class="proc-label">얼굴 촬영</div></div>
       <div class="proc-step"><div class="proc-img"><span class="proc-num">10</span><img loading="lazy" decoding="async"src="images/step10.png" alt="사진출력"></div><div class="proc-label">사진 출력</div></div>
     </div>
+    <div class="sdiv t mobile-only">드림텔러의 특징</div>
     <div class="pts-grid">
       <div class="pt-box"><div class="pt-num">1</div><div><h4>빠르고 직관적인 체험</h4><p>3~5분 이내 체험 완료 및 누구나 즉시 참여 가능</p></div></div>
       <div class="pt-box"><div class="pt-num">2</div><div><h4>간결한 프로세스</h4><p>질문 응답 → 사진 촬영으로 이어지는 2단계 초간단 과정</p></div></div>
